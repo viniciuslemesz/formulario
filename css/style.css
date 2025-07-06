@@ -11,19 +11,28 @@ body {
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 10px;
+    gap: 50px;
 
 }
 
-
 .container
+{
+   background-color: rgb(70, 66, 66);
+   padding-top: 60px; 
+   padding: 20px;
+   border-radius: 5px;
+   margin: 10px;
+   width: 60%;
+}
+
+.segundo-container
 {
    background-color: #464242;
    padding-top: 60px; 
    padding: 20px;
    border-radius: 5px;
    margin: 10px;
-   height: 20px;
-   width: 70%;
+   width: 90%;
 }
 
 .button
@@ -37,10 +46,46 @@ body {
    border-radius: 5px;
    margin: 10px;
    height: 20px;
-   width:73%;
+   width:63%;
    display: flex;             
    justify-content: center;   
    align-items: center;       
    cursor: pointer;
 }
 
+.extras {
+   position: absolute;
+    
+    left: 68%;
+    margin-top: -290px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+a
+{
+text-decoration: none;
+color: #ffffff;
+}
+
+a:hover
+{
+color: #b84242;
+text-decoration: none;
+font-weight:900;
+font-size: larger;
+}
+
+input.formulario {
+    background-color: rgb(70, 66, 66);
+    border: 1px solid rgb(114, 110, 110);
+    color: #ffffff;
+    width: 500px;
+    height: 20px;
+   }
+
+input.formulario {
+    border-color: rgb(134, 127, 127);
+    
+}

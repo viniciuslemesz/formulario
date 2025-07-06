@@ -30,6 +30,9 @@ function campos_invalidos(){
     else
     {
        $mensagem[3] = "Enviado com sucesso!";
+       
+       header('location:nova-pag.php');
+       exit;
     }
 
 }
