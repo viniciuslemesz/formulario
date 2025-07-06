@@ -15,10 +15,9 @@ function idade_invalido(){
     $idade = $_POST['idade'];
 
     if($idade < 0 || $idade > 99)
-    {
-        echo '<h3>Preencha idade com um número válido!</h3>';
-
-    }
+       {
+           echo "<script>alert('Cadastro realizado com sucesso!');</script>";
+        }
 }
 
 

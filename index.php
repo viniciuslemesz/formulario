@@ -12,9 +12,8 @@
 require_once 'validacao.php';
 ?>
 
-<form action="validacao.php" method="post">
+<form method="post">
 
-    
     <div class="container" style="text-align: center; width:95%">
         FORMULÁRIO SIMPLES
     </div>
@@ -39,7 +38,19 @@ require_once 'validacao.php';
         </label>
         <input type="text" name="ocupacao" id="ocupacao" class="formulario" required>
     </div>
-    <button type="submit" class="button" >AVANÇAR</button>
+
+    <button type="submit" class="button">AVANÇAR</button>
+
+    <div class="erros">
+        <?php
+        if (isset($mensagem) && count($mensagem) > 0) {
+            //pega cada item do vetor $mensagem
+            foreach ($mensagem as $msg) {
+                echo "<p style='color: black; font-size:30px; font-weight:bold'>$msg</p>";
+            }
+        }
+        ?>
+    </div>
 
 </form>
 

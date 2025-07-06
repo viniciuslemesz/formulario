@@ -1,22 +1,40 @@
 <?php
-//validações do formulario
+$mensagem = []; // vetor das mensagens
+
 function formulario_nao_enviado() {
     return $_SERVER['REQUEST_METHOD'] !== 'POST';
 }
 
-function formulario_em_branco() {
-    return $_SERVER['REQUEST_METHOD'] == 'empty';
-}
+function campos_invalidos(){ 
+    global $mensagem;
 
-function idade_invalido(){
+    $nome = $_POST['nome'];
     $idade = $_POST['idade'];
+    $ocupacao = $_POST['ocupacao'];
 
-    if($idade < 0 || $idade > 99)
-    {
-        echo '<h3>Preencha idade com um número válido!</h3>';
+    if(empty($nome) || is_numeric($nome)) {
+        $mensagem[0] = "Nome inválido! Preencha novamente!";
+        
+    }
+
+    else if($idade < 0 || $idade > 99) {
+        $mensagem[1] = "Idade inválida! Preencha novamente!";
+        
+    }
+
+    else if(empty($ocupacao) || is_numeric($ocupacao)) {
+        $mensagem[2] = "Ocupação inválida! Preencha novamente!";
 
     }
+    
+    else
+    {
+       $mensagem[3] = "Enviado com sucesso!";
+    }
+
 }
 
-
+if(!formulario_nao_enviado()) {
+    campos_invalidos();
+}
 ?>
